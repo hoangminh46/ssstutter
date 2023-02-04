@@ -1,0 +1,92 @@
+.header {
+  z-index: 999;
+  position: fixed;
+  background-color: #fff;
+  height: 100px;
+  margin: auto;
+  width: 100%;
+  transition: height 0.2s ease;
+  .wrapper {
+    position: relative;
+    padding: 0 50px;
+    display: flex;
+    max-width: var(--default-layout-width);
+    height: 100%;
+    .menu {
+      align-items: center;
+      display: flex;
+      font-size: 1.2rem;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+    }
+    .menu-logo {
+      align-items: center;
+      display: flex;
+      inset: 0;
+      justify-content: center;
+      pointer-events: none;
+      position: absolute;
+    }
+    // Hover Effect
+    .menu-item {
+      a {
+        position: relative;
+      }
+      a:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 0.25rem;
+        left: 50%;
+        bottom: -2px;
+        position: absolute;
+        background: var(--text-color);
+        transition: width 0.3s ease 0.1s, left 0.3s ease 0.1s;
+        width: 0;
+      }
+      a:hover:after {
+        width: 100%;
+        left: 0;
+      }
+      @media screen and (max-height: 300px) {
+        ul {
+          margin-top: 40px;
+        }
+      }
+    }
+    .menu-left,
+    .menu-right {
+      display: flex;
+      gap: 30px;
+      font-size: 1.6rem;
+      color: var(--text-color);
+    }
+  }
+  .active {
+    font-weight: bold;
+  }
+}
+.shopping-bag {
+  position: relative;
+  .cart-count {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    font-size: 1.3rem;
+    background: var(--text-color);
+    color: var(--white);
+    border-radius: 50%;
+    top: -6px;
+    right: -8px;
+  }
+}
+
+// Fixed header
+.header.shrink {
+  height: 70px;
+}

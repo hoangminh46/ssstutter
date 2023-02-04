@@ -1,0 +1,15 @@
+.wrapper {
+  padding: 0 50px;
+}
+
+// Banner
+
+.banner {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+.banner-item img {
+  width: 100%;
+  max-width: 57.1rem;
+}
