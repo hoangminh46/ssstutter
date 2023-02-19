@@ -7,7 +7,7 @@ import { DefaultLayout } from 'components/Layout';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ssstutter">
       <div className="App">
         <Routes>
           {publicRoutes.map((route, index) => {

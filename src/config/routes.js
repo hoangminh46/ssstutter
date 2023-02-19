@@ -1,5 +1,5 @@
 const routes = {
-  home: '/ssstutter',
+  home: '/',
   forHer: '/for-her',
   forHim: '/for-him',
   contact: '/contact',
