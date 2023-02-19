@@ -1,0 +1,62 @@
+@import '/src/components/GlobalStyles/Responsive.scss';
+
+.footer {
+  background: #000;
+  color: #fff;
+  margin-top: 80px;
+  padding: 30px 0 80px 0;
+  box-shadow: 0 8px 24px hsl(210deg 8% 62% / 20%);
+  .wrapper {
+    padding: 0 50px;
+    display: flex;
+    max-width: var(--default-layout-width);
+    height: 100%;
+    @include tablet {
+      padding: 0 25px;
+    }
+
+    .footer-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      @include tablet {
+        gap: 10px;
+      }
+      @include mobile {
+        flex-direction: column;
+      }
+      .footer-item {
+        width: 20%;
+        @include mobile {
+          width: 100%;
+        }
+        .footer-heading {
+          font-size: 1.8rem;
+          margin: 20px 0;
+          @include tablet {
+            font-size: 1.6rem;
+          }
+        }
+        .footer-desc {
+          font-size: 1.6rem;
+          @include tablet {
+            font-size: 1.4rem;
+          }
+          a {
+            display: block;
+            margin-bottom: 10px;
+          }
+          .desc-detail {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+          }
+        }
+        .footer-desc__social {
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}

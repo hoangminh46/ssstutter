@@ -1,0 +1,32 @@
+@import '/src/components/GlobalStyles/Responsive.scss';
+
+.wrapper {
+  text-align: center;
+  padding: 30px;
+  @include mobile {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 6rem;
+    @include mobile {
+      font-size: 4rem;
+    }
+  }
+  h2 {
+    font-size: 5rem;
+    margin-bottom: 30px;
+    @include mobile {
+      font-size: 3rem;
+    }
+  }
+  a {
+    color: #fff;
+    background: #000;
+    padding: 16px;
+    font-size: 1.8rem;
+    @include mobile {
+      padding: 12px;
+      font-size: 1.2rem;
+    }
+  }
+}

@@ -25,6 +25,8 @@ const images = {
   SliderImage4: require('./SliderImage4.jpeg'),
   ForHim: require('./ForHim.jpeg'),
   ForHer: require('./ForHer.jpeg'),
+  WinterBanner: require('./winter2022.jpeg'),
+  StoreBanner: require('./store.jpg'),
 };
 
 export default images;

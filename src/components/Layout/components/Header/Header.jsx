@@ -5,13 +5,20 @@ import 'boxicons';
 import images from 'assets/images';
 import { Link } from 'react-router-dom';
 import routesConfig from 'config/routes';
-import { useState, useTransition } from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { showMenuMobile, showSearchInput } from 'redux/actions';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
 function Header() {
-  // Active khi an vao item
+  const dispatch = useDispatch();
+  const showSearch = useSelector((state) => state.rootReducer.showSearchInput);
+  const menuMobile = useSelector((state) => state.rootReducer.showMenuMobile);
+
+  // Active khi an vao menu header
   const [isActive, setActive] = useState(1);
   const [isScroll, setScroll] = useState(false);
 
@@ -19,6 +26,7 @@ function Header() {
     setActive(id);
   };
 
+  // Handle khi scroll thi thu nho header
   const handleScroll = () => {
     if (window.scrollY >= 100) {
       setScroll(true);
@@ -45,6 +53,15 @@ function Header() {
       });
     };
   }, []);
+
+  const handleShowSearch = () => {
+    dispatch(showSearchInput(!showSearch));
+  };
+
+  const handleShowMenuMobile = () => {
+    dispatch(showMenuMobile(true));
+    console.log(menuMobile);
+  };
 
   return (
     <div className={cx('header', isScroll ? 'shrink' : null)}>
@@ -85,19 +102,16 @@ function Header() {
               <Link to={routesConfig.contact}>LIÊN HỆ</Link>
             </div>
           </div>
+          <div className={cx('icon-menu__mobile')} onClick={handleShowMenuMobile}>
+            <box-icon name="menu-alt-left"></box-icon>
+          </div>
           <div className={cx('menu-right')}>
-            <div className={cx('menu-item')}>
+            <div className={cx('menu-item')} onClick={handleShowSearch}>
               <box-icon name="search"></box-icon>
-            </div>
-            <div className={cx('menu-item')}>
-              <box-icon name="heart"></box-icon>
             </div>
             <div className={cx('menu-item', 'shopping-bag')}>
               <box-icon name="shopping-bag"></box-icon>
               <div className={cx('cart-count')}>0</div>
-            </div>
-            <div className={cx('menu-item')}>
-              <box-icon name="user"></box-icon>
             </div>
           </div>
         </div>
