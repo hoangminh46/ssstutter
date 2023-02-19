@@ -18,8 +18,5 @@ const publicRoutes = [
   { path: '/product/:ProductId', components: ProductDetail },
   { path: '*', components: NotFound },
 ];
-// Dùng cho những Router phải đăng nhập mới xem được
-// Không đăng nhập sẽ chuyển về trang Login
-const privateRoutes = [];
 
-export { publicRoutes, privateRoutes };
+export { publicRoutes };
