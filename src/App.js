@@ -1,11 +1,14 @@
 import { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routes';
-
 import './App.css';
 import { DefaultLayout } from 'components/Layout';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.title = 'SSStutter';
+  }, []);
   return (
     <Router basename="/ssstutter">
       <div className="App">
