@@ -10,7 +10,6 @@ const cx = classNames.bind(styles);
 
 function Search() {
   const [searchValue, setSearchValue] = useState('');
-  console.log(searchValue);
   const dispatch = useDispatch();
   const showSearch = useSelector((state) => state.rootReducer.showSearchInput);
   const products = useSelector((state) => state.rootReducer.products);
@@ -20,8 +19,6 @@ function Search() {
   const searchProducts = products.filter((item) => {
     return item.name.toLowerCase().match(searchValueRegex.trim().toLowerCase());
   });
-
-  console.log(searchProducts);
 
   // handle click an/hien Search
   const handleClick = () => {

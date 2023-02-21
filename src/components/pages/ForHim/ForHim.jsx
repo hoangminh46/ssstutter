@@ -21,8 +21,6 @@ function ForHim() {
   const forHimProducts = products.filter((item) => {
     return item.category.includes('ForHim');
   });
-
-  console.log(products);
   return (
     <div className={cx('wrapper')}>
       <div className={cx('title')}>

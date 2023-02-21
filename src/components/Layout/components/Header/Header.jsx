@@ -30,10 +30,8 @@ function Header() {
   const handleScroll = () => {
     if (window.scrollY >= 100) {
       setScroll(true);
-      console.log('set');
     } else {
       setScroll(false);
-      console.log('unset');
     }
   };
 
@@ -60,7 +58,6 @@ function Header() {
 
   const handleShowMenuMobile = () => {
     dispatch(showMenuMobile(true));
-    console.log(menuMobile);
   };
 
   return (

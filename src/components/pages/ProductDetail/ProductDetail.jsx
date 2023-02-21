@@ -1,12 +1,11 @@
 import styles from './ProductDetail.module.scss';
 import classNames from 'classnames/bind';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import getProducts from 'apiServices/getProduct';
-import Button from 'components/Button/Button';
 
 const cx = classNames.bind(styles);
 

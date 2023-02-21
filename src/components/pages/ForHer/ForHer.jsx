@@ -22,7 +22,6 @@ function ForHer() {
     return item.category.includes('ForHer');
   });
 
-  console.log(products);
   return (
     <div className={cx('wrapper')}>
       <div className={cx('title')}>
