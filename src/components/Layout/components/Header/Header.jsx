@@ -20,6 +20,7 @@ function Header() {
 
   // Active khi an vao menu header
   const [isActive, setActive] = useState(1);
+
   const [isScroll, setScroll] = useState(false);
 
   const handleActiveMenu = (id) => {

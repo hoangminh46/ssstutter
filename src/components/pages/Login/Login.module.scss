@@ -1,0 +1,56 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .login-title {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-size: 7rem;
+    font-weight: bold;
+    svg {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  .login-form {
+    color: var(--white);
+    width: 500px;
+    border-radius: 20px;
+    padding: 50px 35px;
+    background-color: var(--black);
+    .form-title {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .input-section {
+      margin-bottom: 20px;
+      label {
+        font-size: 2rem;
+        display: inline-block;
+        width: 100px;
+      }
+      input {
+        font-size: 1.6rem;
+        padding: 0 20px;
+        height: 30px;
+        width: 300px;
+        outline: none;
+      }
+    }
+    .submit-btn {
+      background-color: #fff;
+      padding: 10px 20px;
+      font-size: 2rem;
+      display: block;
+      margin: 0 auto;
+    }
+    .register {
+      margin-top: 20px;
+      text-align: center;
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+}
