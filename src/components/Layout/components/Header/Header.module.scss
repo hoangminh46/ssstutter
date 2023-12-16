@@ -114,3 +114,27 @@
 .header.shrink {
   height: 70px;
 }
+
+.menu-dropdown__list {
+  width: 200px;
+  border: 1px solid #ccc;
+  box-shadow: #ccc;
+  background-color: #fff;
+  .menu-dropdown__item {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 0;
+    border-radius: 0;
+    font-weight: 500;
+    line-height: 1.8rem;
+    padding: 11px 16px;
+    color: var(--black);
+    &.separate {
+      border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+    &:hover {
+      background-color: rgba(22, 24, 35, 0.03);
+    }
+  }
+}

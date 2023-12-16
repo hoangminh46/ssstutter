@@ -1,6 +1,7 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import 'boxicons';
+import Tippy from '@tippyjs/react/headless';
 
 import images from 'assets/images';
 import { Link } from 'react-router-dom';
@@ -16,7 +17,7 @@ const cx = classNames.bind(styles);
 function Header() {
   const dispatch = useDispatch();
   const showSearch = useSelector((state) => state.rootReducer.showSearchInput);
-  const menuMobile = useSelector((state) => state.rootReducer.showMenuMobile);
+  console.log(showSearch);
 
   // Active khi an vao menu header
   const [isActive, setActive] = useState(1);
@@ -107,10 +108,26 @@ function Header() {
             <div className={cx('menu-item')} onClick={handleShowSearch}>
               <box-icon name="search"></box-icon>
             </div>
-            <div className={cx('menu-item', 'shopping-bag')}>
-              <box-icon name="shopping-bag"></box-icon>
-              <div className={cx('cart-count')}>0</div>
-            </div>
+            <Tippy
+              interactive={true}
+              placement="bottom-end"
+              hideOnClick={false}
+              delay={[0, 200]}
+              offset={[12, 8]}
+              arrow={true}
+              render={(attrs) => (
+                <div className={cx('menu-dropdown__list')} tabIndex="-1" {...attrs}>
+                  <div className={cx('menu-dropdown__item')}>xin chaooooo1</div>
+                  <div className={cx('menu-dropdown__item')}>xin chaooooo2</div>
+                  <div className={cx('menu-dropdown__item')}>xin chaooooo3</div>
+                </div>
+              )}
+            >
+              <div className={cx('menu-item', 'shopping-bag')}>
+                <box-icon name="shopping-bag"></box-icon>
+                <div className={cx('cart-count')}>0</div>
+              </div>
+            </Tippy>
           </div>
         </div>
       </div>
