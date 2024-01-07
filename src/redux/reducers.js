@@ -2,6 +2,11 @@ const initValue = {
   products: [],
   showSearchInput: false,
   showMenuMobile: false,
+  toggleCart: false,
+  // state cho Cart
+  productCart: [],
+  quantityCart: 0,
+  totalPriceCart: 0,
 };
 
 const rootReducer = (state = initValue, action) => {
@@ -20,6 +25,21 @@ const rootReducer = (state = initValue, action) => {
       return {
         ...state,
         showMenuMobile: action.payload,
+      };
+    case 'toggleCart':
+      return {
+        ...state,
+        toggleCart: action.payload,
+      };
+    case 'addProductCart':
+      return {
+        ...state,
+        productCart: [...state.productCart, action.payload],
+      };
+    case 'increaseQuantityCart':
+      return {
+        ...state,
+        quantityCart: state.quantityCart + 1,
       };
     default:
       return state;

@@ -18,3 +18,24 @@ export const showMenuMobile = (payload) => {
     payload,
   };
 };
+
+export const setToggleCart = (payload) => {
+  return {
+    type: 'toggleCart',
+    payload,
+  };
+};
+
+export const addProductCart = (payload) => {
+  return {
+    type: 'addProductCart',
+    payload,
+  };
+};
+
+export const increaseQuantityCart = (payload) => {
+  return {
+    type: 'increaseQuantityCart',
+    payload,
+  };
+};

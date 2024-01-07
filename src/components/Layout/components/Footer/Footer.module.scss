@@ -9,7 +9,7 @@
   .wrapper {
     padding: 0 50px;
     display: flex;
-    max-width: var(--default-layout-width);
+    // max-width: var(--default-layout-width);
     height: 100%;
     @include tablet {
       padding: 0 25px;

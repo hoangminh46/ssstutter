@@ -27,6 +27,8 @@ const images = {
   ForHer: require('./ForHer.jpeg'),
   WinterBanner: require('./winter2022.jpeg'),
   StoreBanner: require('./store.jpg'),
+  PromotionImage1: require('./promotion-slide-1.webp'),
+  PromotionImage2: require('./promotion-slide-2.webp'),
 };
 
 export default images;

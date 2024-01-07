@@ -17,14 +17,11 @@ function ProductItems({ data }) {
       <img src={data.image} alt="" className={cx('product-image')} />
       <p className={cx('product-name')}>{data.name}</p>
       <div className={cx('product-price')}>
-        <p className={cx('sale-price')}>{data.price}</p>
+        <p className={cx('sale-price')}>{data.salePrice}</p>
         <p className={cx('old-price')}>
-          <del>499,000</del>
+          <del>{data.price}</del>
         </p>
       </div>
-      <button className={cx('buy-button')} onClick={(e) => e.preventDefault()}>
-        MUA NGAY
-      </button>
     </Link>
   );
 }

@@ -58,8 +58,12 @@
 
 .open-modal {
   transform: translateY(0px);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .close-modal {
   transform: translateY(-1500px);
+  opacity: 0;
+  pointer-events: none;
 }

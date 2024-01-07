@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 function Button({ text, size }) {
   return (
     <div
-      className={size ? cx('wrapper', 'lg') : cx('wrapper')}
+      className={size ? cx('wrapper', size) : cx('wrapper')}
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();

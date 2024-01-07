@@ -1,6 +1,6 @@
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
-import { ImageSlider, ProductsSlider } from 'components/Layout/Slider/Slider';
+import { ImageSlider, ProductsSlider, PromotionSlider } from 'components/Layout/Slider/Slider';
 import { Link } from 'react-router-dom';
 import routesConfig from 'config/routes';
 import 'boxicons';
@@ -42,6 +42,7 @@ function Home() {
       <div className={cx('winter-banner')}>
         <img src={images.WinterBanner} alt="" />
       </div>
+      <PromotionSlider />
       <div className={cx('new-products')}>
         <div className={cx('heading')}>
           <p>SẢN PHẨM MỚI</p>

@@ -15,7 +15,7 @@
     position: relative;
     padding: 0 50px;
     display: flex;
-    max-width: var(--default-layout-width);
+    // max-width: var(--default-layout-width);
     height: 100%;
     @include mobile {
       padding: 0 15px;

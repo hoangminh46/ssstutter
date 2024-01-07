@@ -5,6 +5,7 @@ import Footer from '../components/Footer/Footer';
 import { TextSlider } from '../Slider/Slider';
 import Search from 'components/Search/Search';
 import MenuMobile from 'components/MenuMobile/MenuMobile';
+import Cart from 'components/Cart/Cart';
 
 const cx = classNames.bind(styles);
 

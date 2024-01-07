@@ -76,8 +76,8 @@ function ProductsSlider() {
     autoplay: true,
     autoplaySpeed: 4000,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToShow: 6,
+    slidesToScroll: 6,
     arrows: false,
     responsive: [
       {
@@ -114,4 +114,28 @@ function ProductsSlider() {
   );
 }
 
-export { TextSlider, ImageSlider, ProductsSlider };
+function PromotionSlider() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dotsClass: cx('custom-dots', 'slick-dots'),
+  };
+  return (
+    <Slider {...settings} className={cx('promotion-slider')}>
+      <div className={cx('slider-content')}>
+        <img src={images.PromotionImage1} alt="" className={cx('promition-image')} />
+      </div>
+      <div className={cx('slider-content')}>
+        <img src={images.PromotionImage2} alt="" className={cx('promition-image')} />
+      </div>
+    </Slider>
+  );
+}
+
+export { TextSlider, ImageSlider, ProductsSlider, PromotionSlider };

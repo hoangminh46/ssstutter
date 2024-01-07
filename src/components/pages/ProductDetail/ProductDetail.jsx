@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import getProducts from 'apiServices/getProduct';
+import Button from 'components/Button/Button';
+import { addProductCart, increaseQuantityCart } from 'redux/actions';
 
 const cx = classNames.bind(styles);
 
@@ -28,6 +30,12 @@ function ProductDetail() {
     return item.id === ProductId;
   });
 
+  function handleAddProduct() {
+    dispatch(addProductCart(product));
+    dispatch(increaseQuantityCart());
+    console.log(product);
+  }
+
   return (
     <div className={cx('wrapper')}>
       {product && (
@@ -37,7 +45,10 @@ function ProductDetail() {
           </div>
           <div className={cx('product-desc')}>
             <div className={cx('product-name')}>{product.name}</div>
-            <div className={cx('product-price')}>{product.price}</div>
+            <div className={cx('product-price')}>
+              <p className={cx('sale-price')}>{product.salePrice}</p>
+              <del className={cx('old-price')}>{product.price}</del>
+            </div>
             <div className={cx('product-color')}>
               <p>Màu sắc</p>
               <div className={cx('color-list')}>
@@ -90,8 +101,9 @@ function ProductDetail() {
               </div>
             </div>
             <div className={cx('product-choice')}>
-              <button className={cx('product-btn')}>THÊM VÀO GIỎ HÀNG</button>
-              <button className={cx('product-btn')}>MUA NGAY</button>
+              <button className={cx('product-btn')} onClick={handleAddProduct}>
+                THÊM VÀO GIỎ HÀNG
+              </button>
             </div>
           </div>
           <div className={cx('product-info')}>
