@@ -1,0 +1,43 @@
+@import '/src/components/GlobalStyles/Responsive.scss';
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 209px;
+  height: 387px;
+  cursor: pointer;
+
+  .product-image {
+    width: 100%;
+    height: 261px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  .product-name {
+    font-size: 1.8rem;
+  }
+  .product-price {
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+    @include mobile {
+      font-size: 1.4rem;
+    }
+
+    .sale-price {
+      font-weight: bold;
+    }
+    .old-price {
+      color: #9a9a9a;
+    }
+  }
+  .buy-button {
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 6px 10px;
+    background: #000;
+    color: #fff;
+  }
+}

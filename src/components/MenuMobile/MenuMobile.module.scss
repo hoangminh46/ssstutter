@@ -1,0 +1,47 @@
+.wrapper {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color: #5a5a5a, $alpha: 0.6);
+  .menu {
+    padding: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background: var(--white);
+    color: var(--black);
+    transition: 0.3s linear;
+    .icon-back {
+      cursor: pointer;
+      margin-bottom: 30px;
+      width: 30px;
+      height: 30px;
+    }
+    .menu-list {
+      list-style: none;
+      .menu-item {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .hide-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-300px);
+  }
+  .show-menu {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.show {
+  display: block;
+}

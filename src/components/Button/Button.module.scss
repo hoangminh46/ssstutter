@@ -1,0 +1,53 @@
+@import '/src/components/GlobalStyles/Responsive.scss';
+
+.wrapper {
+  display: block;
+  cursor: pointer;
+  width: 120px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  .btn-text {
+    color: #fff;
+    font-size: 1.4rem;
+  }
+}
+
+.md {
+  width: 400px;
+  height: 48px;
+  @include mobile {
+    width: 180px;
+    height: 42px;
+  }
+  .btn-text {
+    font-size: 2rem;
+  }
+}
+
+.lg {
+  margin: 30px auto 0 auto;
+  width: 220px;
+  height: 48px;
+  @include mobile {
+    width: 180px;
+    height: 42px;
+  }
+  .btn-text {
+    font-size: 2rem;
+  }
+}
+
+.xxl {
+  margin: 30px auto 0 auto;
+  width: 100%;
+  height: 46px;
+  @include mobile {
+    height: 40px;
+  }
+  .btn-text {
+    font-size: 1.8rem;
+  }
+}
