@@ -53,7 +53,7 @@ function Cart() {
                       <div className={cx('current-price')}>{item.price}</div>
                     </div>
                     <div className={cx('cart-item__more')}>
-                      <p className={cx('cart-item__heading')}>Số lượng:</p>
+                      <p className={cx('cart-item__heading')}>Số lượng :</p>
                       <div className={cx('quantity-cart')}>
                         <div
                           className={cx('quantity__btn')}
