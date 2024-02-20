@@ -10,7 +10,7 @@ function App() {
     document.title = 'SSStutter';
   }, []);
   return (
-    <Router basename="/ssstutter">
+    <Router>
       <div className="App">
         <Routes>
           {publicRoutes.map((route, index) => {
