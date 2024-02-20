@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/ssstutter/static/css/main.22be17d6.css",
-    "main.js": "/ssstutter/static/js/main.6d5c5249.js",
+    "main.css": "/ssstutter/static/css/main.b3c479d0.css",
+    "main.js": "/ssstutter/static/js/main.5b9fbaf9.js",
     "static/js/787.0ef7d2fb.chunk.js": "/ssstutter/static/js/787.0ef7d2fb.chunk.js",
     "static/media/SliderImage2.jpeg": "/ssstutter/static/media/SliderImage2.f3a15786c79d3df8d102.jpeg",
+    "static/media/promotion-slide-1.webp": "/ssstutter/static/media/promotion-slide-1.9f4505a1f3d8564e7e78.webp",
     "static/media/winter2022.jpeg": "/ssstutter/static/media/winter2022.f0de869c1e84c0fbed9c.jpeg",
     "static/media/SliderImage3.jpeg": "/ssstutter/static/media/SliderImage3.56e51137b0baeaf8f743.jpeg",
     "static/media/ForHim.jpeg": "/ssstutter/static/media/ForHim.4df5b5a7fd3b93d4ce12.jpeg",
+    "static/media/promotion-slide-2.webp": "/ssstutter/static/media/promotion-slide-2.7fb2f3f3a6ba27c9b513.webp",
     "static/media/SliderImage4.jpeg": "/ssstutter/static/media/SliderImage4.713cecce4195b6dbe45b.jpeg",
     "static/media/SliderImage1.jpeg": "/ssstutter/static/media/SliderImage1.ba98bfa679a903de4aa9.jpeg",
     "static/media/store.jpg": "/ssstutter/static/media/store.d3ba72ca19a414068b8f.jpg",
@@ -16,12 +18,12 @@
     "static/media/slick.ttf": "/ssstutter/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/ssstutter/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/ssstutter/index.html",
-    "main.22be17d6.css.map": "/ssstutter/static/css/main.22be17d6.css.map",
-    "main.6d5c5249.js.map": "/ssstutter/static/js/main.6d5c5249.js.map",
+    "main.b3c479d0.css.map": "/ssstutter/static/css/main.b3c479d0.css.map",
+    "main.5b9fbaf9.js.map": "/ssstutter/static/js/main.5b9fbaf9.js.map",
     "787.0ef7d2fb.chunk.js.map": "/ssstutter/static/js/787.0ef7d2fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22be17d6.css",
-    "static/js/main.6d5c5249.js"
+    "static/css/main.b3c479d0.css",
+    "static/js/main.5b9fbaf9.js"
   ]
 }
