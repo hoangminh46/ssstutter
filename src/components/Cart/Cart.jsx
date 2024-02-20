@@ -79,15 +79,15 @@ function Cart() {
                       </div>
                     </div>
                     <div className={cx('cart-item__more')}>
-                      <p className={cx('cart-item__heading')}>Màu:</p>
+                      <p className={cx('cart-item__heading')}>Màu :</p>
                       <div>Be sáng</div>
                     </div>
                     <div className={cx('cart-item__more')}>
-                      <p className={cx('cart-item__heading')}>Size:</p>
+                      <p className={cx('cart-item__heading')}>Size :</p>
                       <div>M</div>
                     </div>
                     <div className={cx('cart-item__more')}>
-                      <p className={cx('cart-item__heading')}>Tổng:</p>
+                      <p className={cx('cart-item__heading')}>Tổng :</p>
                       <div>500,000</div>
                     </div>
                   </div>
