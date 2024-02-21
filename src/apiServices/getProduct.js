@@ -3,7 +3,7 @@ import { loadProducts } from 'redux/actions';
 
 async function getProducts(dispatch) {
   try {
-    const response = await axios.get('http://localhost:8000/api/products');
+    const response = await axios.get('https://api-shop-d68u.onrender.com/api/products');
     dispatch(loadProducts(response.data));
   } catch (error) {
     console.error(error);
