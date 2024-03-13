@@ -24,14 +24,6 @@ function Home() {
   return (
     <div className={cx('wrapper')}>
       <ImageSlider />
-      <div className={cx('banner')}>
-        <Link to={routesConfig.forHim} className={cx('banner-item')}>
-          <img src={images.ForHim} alt="" />
-        </Link>
-        <Link to={routesConfig.forHer} className={cx('banner-item')}>
-          <img src={images.ForHer} alt="" />
-        </Link>
-      </div>
       <div className={cx('new-collection')}>
         <div className={cx('heading')}>
           <p>BỘ SƯU TẬP MỚI</p>
@@ -42,7 +34,7 @@ function Home() {
       <div className={cx('winter-banner')}>
         <img src={images.WinterBanner} alt="" />
       </div>
-      <PromotionSlider />
+
       <div className={cx('new-products')}>
         <div className={cx('heading')}>
           <p>SẢN PHẨM MỚI</p>
@@ -55,6 +47,7 @@ function Home() {
         </div>
         <Button text="XEM THÊM" size="lg" className={cx('load-more')} />
       </div>
+      <PromotionSlider />
       <div className={cx('policy')}>
         <div className={cx('policy-card')}>
           <div className={cx('card-icon')}>
