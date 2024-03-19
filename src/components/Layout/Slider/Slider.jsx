@@ -69,7 +69,7 @@ function ImageSlider() {
 }
 
 function ProductsSlider() {
-  const products = useSelector((state) => state.rootReducer.products);
+  const products = useSelector((state) => state.product.products);
   var settings = {
     dots: false,
     infinite: true,

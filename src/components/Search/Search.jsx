@@ -3,16 +3,17 @@ import classNames from 'classnames/bind';
 import 'boxicons';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductItems from 'components/ProductItem/ProductItem';
-import { showSearchInput } from 'redux/actions';
+// import { showSearchInput } from 'redux/actions';
 import { useState } from 'react';
+import { showSearchInput } from 'redux/configSlice';
 
 const cx = classNames.bind(styles);
 
 function Search() {
   const [searchValue, setSearchValue] = useState('');
   const dispatch = useDispatch();
-  const showSearch = useSelector((state) => state.rootReducer.showSearchInput);
-  const products = useSelector((state) => state.rootReducer.products);
+  const showSearch = useSelector((state) => state.config.showSearchInput);
+  const products = useSelector((state) => state.product.products);
 
   const searchValueRegex = searchValue.replace(new RegExp('\\\\', 'g'), '\\\\');
 

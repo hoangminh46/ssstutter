@@ -8,17 +8,18 @@ import routesConfig from 'config/routes';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setToggleCart, showMenuMobile, showSearchInput } from 'redux/actions';
 import { useSelector } from 'react-redux';
 import Cart from 'components/Cart/Cart';
+import { showMenuMobile, showSearchInput } from 'redux/configSlice';
+import { setToggleCart } from 'redux/cartSlice';
 
 const cx = classNames.bind(styles);
 
 function Header() {
   const dispatch = useDispatch();
-  const showSearch = useSelector((state) => state.rootReducer.showSearchInput);
-  const toggleCart = useSelector((state) => state.rootReducer.toggleCart);
-  const quantityCart = useSelector((state) => state.rootReducer.quantityCart);
+  const showSearch = useSelector((state) => state.config.showSearchInput);
+  const toggleCart = useSelector((state) => state.cart.toggleCart);
+  const quantityCart = useSelector((state) => state.cart.quantityCart);
 
   // Active khi an vao menu header
   const [isActive, setActive] = useState(1);

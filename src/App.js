@@ -4,11 +4,20 @@ import { publicRoutes } from './routes';
 import './App.css';
 import { DefaultLayout } from 'components/Layout';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchProducts } from 'redux/productSlice';
 
 function App() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     document.title = 'SSStutter';
   }, []);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
   return (
     <Router basename="/ssstutter">
       <div className="App">

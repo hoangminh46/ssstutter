@@ -1,49 +1,13 @@
-const initValue = {
-  products: [],
-  showSearchInput: false,
-  showMenuMobile: false,
-  toggleCart: false,
-  // state cho Cart
-  productCart: [],
-  quantityCart: 0,
-  totalPriceCart: 0,
-};
+import { combineReducers } from '@reduxjs/toolkit';
 
-const rootReducer = (state = initValue, action) => {
-  switch (action.type) {
-    case 'loadProducts':
-      return {
-        ...state,
-        products: [...action.payload],
-      };
-    case 'showSearchInput':
-      return {
-        ...state,
-        showSearchInput: action.payload,
-      };
-    case 'showMenuMobile':
-      return {
-        ...state,
-        showMenuMobile: action.payload,
-      };
-    case 'toggleCart':
-      return {
-        ...state,
-        toggleCart: action.payload,
-      };
-    case 'addProductCart':
-      return {
-        ...state,
-        productCart: [...state.productCart, action.payload],
-      };
-    case 'increaseQuantityCart':
-      return {
-        ...state,
-        quantityCart: state.quantityCart + 1,
-      };
-    default:
-      return state;
-  }
-};
+import cartReducer from './cartSlice';
+import productReducer from './productSlice';
+import configReducer from './configSlice';
+
+const rootReducer = combineReducers({
+  cart: cartReducer,
+  product: productReducer,
+  config: configReducer,
+});
 
 export default rootReducer;

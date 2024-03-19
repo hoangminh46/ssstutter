@@ -5,12 +5,12 @@ import routesConfig from 'config/routes';
 import 'boxicons';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { showMenuMobile } from 'redux/actions';
+import { showMenuMobile } from 'redux/configSlice';
 
 const cx = classNames.bind(styles);
 
 function MenuMobile() {
-  const menuMobile = useSelector((state) => state.rootReducer.showMenuMobile);
+  const menuMobile = useSelector((state) => state.config.showMenuMobile);
   const dispatch = useDispatch();
 
   const handleCloseMenu = () => {

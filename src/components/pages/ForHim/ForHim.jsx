@@ -3,19 +3,13 @@ import classNames from 'classnames/bind';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductItems from 'components/ProductItem/ProductItem';
 import { useEffect } from 'react';
-import getProducts from 'apiServices/getProduct';
 
 const cx = classNames.bind(styles);
 
 function ForHim() {
-  const products = useSelector((state) => state.rootReducer.products);
+  const products = useSelector((state) => state.product.products);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    getProducts(dispatch);
-  }, []);
 
   // lọc sản phẩm dành cho nam
   const forHimProducts = products.filter((item) => {

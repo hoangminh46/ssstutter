@@ -1,15 +1,24 @@
-import { combineReducers } from 'redux';
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
 import rootReducer from './reducers';
-import { composeWithDevTools } from 'redux-devtools-extension';
 
-const composedEnhancers = composeWithDevTools();
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['cart'], // Danh sách các state được lưu vào localStorage
+  blacklist: [], // Danh sách các state không được lưu vào localStorage
+};
 
-const allReducers = combineReducers({
-  rootReducer,
-  // add more reducers here
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
-const store = createStore(allReducers, composedEnhancers);
-
-export default store;
+export const persistor = persistStore(store);

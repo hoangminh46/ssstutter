@@ -1,37 +1,20 @@
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import { ImageSlider, ProductsSlider, PromotionSlider } from 'components/Layout/Slider/Slider';
-import { Link } from 'react-router-dom';
-import routesConfig from 'config/routes';
 import 'boxicons';
 import images from 'assets/images';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import ProductItems from 'components/ProductItem/ProductItem';
-import getProducts from 'apiServices/getProduct';
 import Button from 'components/Button/Button';
 
 const cx = classNames.bind(styles);
 
 function Home() {
-  const products = useSelector((state) => state.rootReducer.products);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    getProducts(dispatch);
-  }, []);
+  const products = useSelector((state) => state.product.products);
 
   return (
     <div className={cx('wrapper')}>
       <ImageSlider />
-      <div className={cx('banner')}>
-        <Link to={routesConfig.forHim} className={cx('banner-item')}>
-          <img src={images.ForHim} alt="" />
-        </Link>
-        <Link to={routesConfig.forHer} className={cx('banner-item')}>
-          <img src={images.ForHer} alt="" />
-        </Link>
-      </div>
       <div className={cx('new-collection')}>
         <div className={cx('heading')}>
           <p>BỘ SƯU TẬP MỚI</p>
@@ -42,7 +25,6 @@ function Home() {
       <div className={cx('winter-banner')}>
         <img src={images.WinterBanner} alt="" />
       </div>
-      <PromotionSlider />
       <div className={cx('new-products')}>
         <div className={cx('heading')}>
           <p>SẢN PHẨM MỚI</p>
@@ -55,6 +37,7 @@ function Home() {
         </div>
         <Button text="XEM THÊM" size="lg" className={cx('load-more')} />
       </div>
+      <PromotionSlider />
       <div className={cx('policy')}>
         <div className={cx('policy-card')}>
           <div className={cx('card-icon')}>

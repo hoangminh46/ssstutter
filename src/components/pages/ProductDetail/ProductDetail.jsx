@@ -5,35 +5,29 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import getProducts from 'apiServices/getProduct';
-import Button from 'components/Button/Button';
-import { addProductCart, increaseQuantityCart } from 'redux/actions';
+import { addProductCart, increaseQuantityCart } from 'redux/cartSlice';
 
 const cx = classNames.bind(styles);
 
 function ProductDetail() {
   // Xu ly khach hang chon so luong
-  const [quantityInput, setQuantityInput] = useState(0);
+  const [quantityInput, setQuantityInput] = useState(1);
 
   const [readMore, setReadMore] = useState(false);
 
-  const products = useSelector((state) => state.rootReducer.products);
+  const products = useSelector((state) => state.product.products);
   const { ProductId } = useParams();
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    getProducts(dispatch);
-  }, []);
 
   const product = products.find((item) => {
     return item.id === ProductId;
   });
 
   function handleAddProduct() {
-    dispatch(addProductCart(product));
+    dispatch(
+      addProductCart({ ...product, countProduct: quantityInput, totalPrice: quantityInput * product.salePrice }),
+    );
     dispatch(increaseQuantityCart());
-    console.log(product);
   }
 
   return (
@@ -165,7 +159,6 @@ function ProductDetail() {
             <button
               className={cx('btn-info')}
               onClick={() => {
-                console.log(readMore);
                 setReadMore(!readMore);
               }}
             >

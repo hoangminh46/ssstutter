@@ -2,7 +2,6 @@ import styles from './ProductItem.module.scss';
 import classNames from 'classnames/bind';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { showSearchInput } from 'redux/actions';
 
 const cx = classNames.bind(styles);
 
@@ -10,7 +9,7 @@ function ProductItems({ data }) {
   const dispatch = useDispatch();
 
   const handleClick = (e) => {
-    dispatch(showSearchInput(false));
+    // dispatch(showSearchInput(false));
   };
   return (
     <Link to={`/product/${data.id}`} className={cx('product-item')} key={data.id} onClick={handleClick}>

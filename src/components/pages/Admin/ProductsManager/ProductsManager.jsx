@@ -3,18 +3,12 @@ import classNames from 'classnames/bind';
 import 'boxicons';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import getProducts from 'apiServices/getProduct';
 
 const cx = classNames.bind(styles);
 
 function ProductsManager() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.rootReducer.products);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    getProducts(dispatch);
-  }, []);
 
   console.log(products);
   return (
