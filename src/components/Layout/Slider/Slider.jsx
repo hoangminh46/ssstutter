@@ -108,7 +108,7 @@ function ProductsSlider() {
   return (
     <Slider {...settings} className={cx('products-slider')}>
       {products.map((item) => (
-        <ProductItems data={item} key={item.id} />
+        <ProductItems data={item} slideClass={true} key={item.id} />
       ))}
     </Slider>
   );

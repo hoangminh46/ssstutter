@@ -19,7 +19,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Router basename="/ssstutter">
+    <Router>
       <div className="App">
         <Routes>
           {publicRoutes.map((route, index) => {

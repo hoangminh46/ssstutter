@@ -1,7 +1,7 @@
 {
   "name": "shop-clone",
   "version": "0.1.0",
-  "homepage": "https://hoangminh46.github.io/ssstutter",
+  "homepage": "https://ssstutter-rho.vercel.app",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",

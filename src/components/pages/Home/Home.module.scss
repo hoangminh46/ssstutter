@@ -48,11 +48,11 @@
 //new product
 
 .new-products {
-  margin-top: 50px;
+  margin: 50px 0;
   .product-list {
     margin: 30px 30px 0 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 50px 30px;
     flex-wrap: wrap;
     @include tablet {
@@ -85,13 +85,13 @@
   }
   .policy-card {
     transition: 0.3s all;
-    width: 100%;
-    max-width: 275px;
+    width: 22%;
     height: 100px;
     padding: 20px;
     box-shadow: 0 8px 24px hsl(210deg 8% 62% / 20%);
     display: flex;
     align-items: center;
+    justify-content: center;
     @include tablet {
       padding: 10px;
       height: 80px;
