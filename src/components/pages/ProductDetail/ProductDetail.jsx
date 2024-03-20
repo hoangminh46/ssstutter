@@ -1,11 +1,12 @@
 import styles from './ProductDetail.module.scss';
 import classNames from 'classnames/bind';
 
+import { NumericFormat } from 'react-number-format';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { addProductCart, increaseQuantityCart } from 'redux/cartSlice';
+import { addProductCart, updateTotalPriceCart } from 'redux/cartSlice';
 
 const cx = classNames.bind(styles);
 
@@ -27,7 +28,7 @@ function ProductDetail() {
     dispatch(
       addProductCart({ ...product, countProduct: quantityInput, totalPrice: quantityInput * product.salePrice }),
     );
-    dispatch(increaseQuantityCart());
+    dispatch(updateTotalPriceCart());
   }
 
   return (
@@ -40,8 +41,24 @@ function ProductDetail() {
           <div className={cx('product-desc')}>
             <div className={cx('product-name')}>{product.name}</div>
             <div className={cx('product-price')}>
-              <p className={cx('sale-price')}>{product.salePrice}</p>
-              <del className={cx('old-price')}>{product.price}</del>
+              <p className={cx('sale-price')}>
+                <NumericFormat
+                  type="text"
+                  value={product.salePrice}
+                  displayType={'text'}
+                  thousandsGroupStyle="thousand"
+                  thousandSeparator=","
+                />
+              </p>
+              <del className={cx('old-price')}>
+                <NumericFormat
+                  type="text"
+                  value={product.price}
+                  displayType={'text'}
+                  thousandsGroupStyle="thousand"
+                  thousandSeparator=","
+                />
+              </del>
             </div>
             <div className={cx('product-color')}>
               <p>Màu sắc</p>

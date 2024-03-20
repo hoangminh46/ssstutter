@@ -3,6 +3,7 @@ import styles from './Cart.module.scss';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { NumericFormat } from 'react-number-format';
 import Button from 'components/Button/Button';
 import { setToggleCart } from 'redux/cartSlice';
 import ProductCart from 'components/ProductCart/ProductCart';
@@ -12,6 +13,7 @@ function Cart() {
   const dispatch = useDispatch();
   const toggleCart = useSelector((state) => state.cart.toggleCart);
   const productCart = useSelector((state) => state.cart.productCart);
+  const totalPriceCart = useSelector((state) => state.cart.totalPriceCart);
 
   function handleClickCart(e) {
     if (e.currentTarget === e.target) {
@@ -47,7 +49,15 @@ function Cart() {
         <div className={cx('cart-footer')}>
           <div className={cx('cart-total')}>
             <p>Thành tiền</p>
-            <b className={cx('cart-total__price')}>500,000</b>
+            <b className={cx('cart-total__price')}>
+              <NumericFormat
+                type="text"
+                value={totalPriceCart}
+                displayType={'text'}
+                thousandsGroupStyle="thousand"
+                thousandSeparator=","
+              />
+            </b>
           </div>
           <Button text="Thanh toán" size="xxl" />
         </div>

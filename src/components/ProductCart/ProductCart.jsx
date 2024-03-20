@@ -2,7 +2,8 @@ import { useState } from 'react';
 import styles from './ProductCart.module.scss';
 import classNames from 'classnames/bind';
 import { useDispatch } from 'react-redux';
-import { decreaseQuantityInput, deleteProductCart, increaseQuantityInput } from 'redux/cartSlice';
+import { NumericFormat } from 'react-number-format';
+import { decreaseQuantityInput, deleteProductCart, increaseQuantityInput, updateTotalPriceCart } from 'redux/cartSlice';
 
 const cx = classNames.bind(styles);
 
@@ -11,6 +12,7 @@ function ProductCart({ data }) {
 
   function handleDeleteProduct(product) {
     dispatch(deleteProductCart(product));
+    dispatch(updateTotalPriceCart());
   }
 
   return (
@@ -26,8 +28,24 @@ function ProductCart({ data }) {
           </div>
         </div>
         <div className={cx('cart-item-price')}>
-          <div className={cx('discounted-price')}>{data.salePrice}</div>
-          <div className={cx('current-price')}>{data.price}</div>
+          <div className={cx('discounted-price')}>
+            <NumericFormat
+              type="text"
+              value={data.salePrice}
+              displayType={'text'}
+              thousandsGroupStyle="thousand"
+              thousandSeparator=","
+            />
+          </div>
+          <div className={cx('current-price')}>
+            <NumericFormat
+              type="text"
+              value={data.price}
+              displayType={'text'}
+              thousandsGroupStyle="thousand"
+              thousandSeparator=","
+            />
+          </div>
         </div>
         <div className={cx('cart-item__more')}>
           <p className={cx('cart-item__heading')}>Số lượng:</p>
@@ -36,6 +54,7 @@ function ProductCart({ data }) {
               className={cx('quantity__btn')}
               onClick={() => {
                 dispatch(decreaseQuantityInput(data));
+                dispatch(updateTotalPriceCart());
               }}
             >
               <box-icon name="minus" size="md"></box-icon>
@@ -45,6 +64,7 @@ function ProductCart({ data }) {
               className={cx('quantity__btn')}
               onClick={() => {
                 dispatch(increaseQuantityInput(data));
+                dispatch(updateTotalPriceCart());
               }}
             >
               <box-icon name="plus" size="md"></box-icon>
@@ -61,7 +81,15 @@ function ProductCart({ data }) {
         </div>
         <div className={cx('cart-item__more')}>
           <p className={cx('cart-item__heading')}>Tổng :</p>
-          <div>{data.totalPrice}</div>
+          <div>
+            <NumericFormat
+              type="text"
+              value={data.totalPrice}
+              displayType={'text'}
+              thousandsGroupStyle="thousand"
+              thousandSeparator=","
+            />
+          </div>
         </div>
       </div>
     </li>

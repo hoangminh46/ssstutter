@@ -13,7 +13,6 @@ function ForHer() {
 
   // lọc sản phẩm dành cho nam
   const forHerProducts = products.filter((item) => {
-    console.log(item.category.includes('ForHer'));
     return item.category.includes('ForHer');
   });
 

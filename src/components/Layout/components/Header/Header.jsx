@@ -19,7 +19,7 @@ function Header() {
   const dispatch = useDispatch();
   const showSearch = useSelector((state) => state.config.showSearchInput);
   const toggleCart = useSelector((state) => state.cart.toggleCart);
-  const quantityCart = useSelector((state) => state.cart.quantityCart);
+  const quantityCart = useSelector((state) => state.cart.productCart.length);
 
   // Active khi an vao menu header
   const [isActive, setActive] = useState(1);
