@@ -1,13 +1,11 @@
 import styles from './ProductsManager.module.scss';
 import classNames from 'classnames/bind';
 import 'boxicons';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
 function ProductsManager() {
-  const dispatch = useDispatch();
   const products = useSelector((state) => state.rootReducer.products);
 
   console.log(products);

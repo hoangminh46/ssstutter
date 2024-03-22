@@ -4,9 +4,10 @@ import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { NumericFormat } from 'react-number-format';
-import Button from 'components/Button/Button';
 import { setToggleCart } from 'redux/cartSlice';
 import ProductCart from 'components/ProductCart/ProductCart';
+import { Link } from 'react-router-dom';
+import routesConfig from 'config/routes';
 const cx = classNames.bind(styles);
 
 function Cart() {
@@ -59,7 +60,13 @@ function Cart() {
               />
             </b>
           </div>
-          <Button text="Thanh toán" size="xxl" />
+          <Link
+            to={routesConfig.checkout}
+            className={cx('btn-checkout')}
+            onClick={() => dispatch(setToggleCart(false))}
+          >
+            Thanh toán
+          </Link>
         </div>
       </div>
     </div>

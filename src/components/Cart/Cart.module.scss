@@ -38,6 +38,17 @@
     .btn-cart {
       width: 100%;
     }
+    .btn-checkout {
+      background-color: #000;
+      margin: 15px 0;
+      color: #fff;
+      cursor: pointer;
+      width: 100%;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 .show-cart__wrapper {

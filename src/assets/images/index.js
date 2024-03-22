@@ -29,6 +29,9 @@ const images = {
   StoreBanner: require('./store.jpg'),
   PromotionImage1: require('./promotion-slide-1.webp'),
   PromotionImage2: require('./promotion-slide-2.webp'),
+  PaymentImage1: require('./Visa.png'),
+  PaymentImage2: require('./MoMo.png'),
+  PaymentImage3: require('./cod.png'),
 };
 
 export default images;

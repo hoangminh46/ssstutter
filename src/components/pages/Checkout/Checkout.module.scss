@@ -1,0 +1,96 @@
+.checkout {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  .checkout-item {
+    width: 30%;
+    padding: 16px;
+    .checkout-title {
+      font-size: 2.6rem;
+    }
+    .checkout-form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+      .form-section {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 24px;
+      }
+      .form-label {
+        font-size: 2rem;
+      }
+      input,
+      select {
+        border: 0;
+        padding: 7px 0;
+        border-bottom: 1px solid #ccc;
+        font-size: 1.8rem;
+        padding: 10px;
+      }
+      input:focus {
+        outline: none;
+      }
+      select:focus {
+        outline: none;
+      }
+      input ~ .focus-border {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #333;
+        transition: 0.4s;
+      }
+      input:focus ~ .focus-border {
+        width: 100%;
+        transition: 0.4s;
+      }
+    }
+    .form-method {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 2rem;
+      .method-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+      }
+      .checkout-icon {
+        width: 10%;
+      }
+    }
+    .checkout-list {
+      max-height: 605px;
+      overflow-y: scroll;
+    }
+    .payment-price {
+      padding: 1.4rem 1rem;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .price-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 2rem;
+        .cart-total__price {
+          font-size: 2.2rem;
+        }
+      }
+    }
+    .total-payment {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      padding: 1rem;
+      font-size: 2.4rem;
+    }
+  }
+}

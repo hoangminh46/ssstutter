@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from './ProductCart.module.scss';
 import classNames from 'classnames/bind';
 import { useDispatch } from 'react-redux';

@@ -1,15 +1,12 @@
 import styles from './ForHer.module.scss';
 import classNames from 'classnames/bind';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ProductItems from 'components/ProductItem/ProductItem';
-import { useEffect } from 'react';
 
 const cx = classNames.bind(styles);
 
 function ForHer() {
   const products = useSelector((state) => state.product.products);
-
-  const dispatch = useDispatch();
 
   // lọc sản phẩm dành cho nam
   const forHerProducts = products.filter((item) => {
