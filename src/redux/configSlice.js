@@ -7,7 +7,7 @@ const initValue = {
   cityData: [],
 };
 
-export const fetchCity = createAsyncThunk('product/fetchProducts', async () => {
+export const fetchCity = createAsyncThunk('config/fetchCity', async () => {
   const response = await axios.get('https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json');
   return response.data;
 });
@@ -21,7 +21,7 @@ const configSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchCity.fulfilled, (state, action) => {
-      return action.payload;
+      state.cityData = action.payload;
     });
   },
 });

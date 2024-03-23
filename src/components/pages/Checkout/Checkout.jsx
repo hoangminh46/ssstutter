@@ -5,21 +5,51 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProductCart from 'components/ProductCart/ProductCart';
 import { NumericFormat } from 'react-number-format';
 import Button from 'components/Button/Button';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchCity } from 'redux/configSlice';
 
 const cx = classNames.bind(styles);
 
 function Checkout() {
+  const [citis, setCitis] = useState([]);
+  const [districts, setDistricts] = useState([]);
+  const [wards, setWards] = useState([]);
+
   const dispatch = useDispatch();
   const productCart = useSelector((state) => state.cart.productCart);
   const totalPriceCart = useSelector((state) => state.cart.totalPriceCart);
   const cityData = useSelector((state) => state.config.cityData);
-  console.log(cityData);
 
   useEffect(() => {
     dispatch(fetchCity());
-  }, []);
+  }, [dispatch]);
+
+  function handleCityChange(e) {
+    const selectedCityId = e.target.value;
+    const selectedCity = cityData.find((city) => city.Id === selectedCityId);
+    setCitis(selectedCity);
+
+    const districtOptions = selectedCity.Districts.map((district) => (
+      <option key={district.Id} value={district.Id}>
+        {district.Name}
+      </option>
+    ));
+    setDistricts(districtOptions);
+    setWards([]);
+  }
+
+  const handleDistrictChange = (e) => {
+    const selectedDistrictId = e.target.value;
+    const selectedCity = citis;
+    const selectedDistrict = selectedCity.Districts.find((district) => district.Id === selectedDistrictId);
+
+    const wardOptions = selectedDistrict.Wards.map((ward) => (
+      <option key={ward.Id} value={ward.Id}>
+        {ward.Name}
+      </option>
+    ));
+    setWards(wardOptions);
+  };
 
   return (
     <div className={cx('checkout')}>
@@ -43,23 +73,35 @@ function Checkout() {
             <input label="Số điện thoại" name="customerPhone" type="text" />
             <span className={cx('focus-border')}></span>
           </div>
-
           <div className={cx('form-section')}>
             <label className={cx('form-label')}>Chọn tỉnh/ Thành phố</label>
-            <select name="city">
-              <option value="default" disabled="" hidden=""></option>
+            <select name="city" id="city" defaultValue="default" onChange={handleCityChange}>
+              <option value="default" hidden>
+                Chọn tỉnh thành
+              </option>
+              {cityData.map((item) => (
+                <option key={item.Id} value={item.Id}>
+                  {item.Name}
+                </option>
+              ))}
             </select>
           </div>
           <div className={cx('form-section')}>
             <label className={cx('form-label')}>Chọn quận/ Huyện</label>
-            <select name="district">
-              <option value="default" disabled="" hidden=""></option>
+            <select name="district" id="district" defaultValue="default" onChange={handleDistrictChange}>
+              <option value="default" hidden>
+                Chọn quận huyện
+              </option>
+              {districts}
             </select>
           </div>
           <div className={cx('form-section')}>
             <label className={cx('form-label')}>Chọn phường/ Xã</label>
-            <select name="ward">
-              <option value="default" disabled="" hidden=""></option>
+            <select name="ward" id="ward" defaultValue="default">
+              <option value="default" hidden>
+                Chọn phường xã
+              </option>
+              {wards}
             </select>
           </div>
           <div className={cx('form-section')}>
