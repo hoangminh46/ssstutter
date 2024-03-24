@@ -67,7 +67,7 @@
       }
     }
     .checkout-list {
-      max-height: 605px;
+      max-height: 530px;
       overflow-y: auto;
     }
     .payment-price {
@@ -93,4 +93,21 @@
       font-size: 2.4rem;
     }
   }
+}
+.error-message {
+  color: #d60000;
+  margin-top: 6px;
+}
+.payment-button {
+  margin: 30px auto 0 auto;
+  width: 100%;
+  height: 46px;
+  display: block;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.8rem;
 }

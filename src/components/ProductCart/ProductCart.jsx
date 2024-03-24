@@ -6,7 +6,7 @@ import { decreaseQuantityInput, deleteProductCart, increaseQuantityInput, update
 
 const cx = classNames.bind(styles);
 
-function ProductCart({ data }) {
+function ProductCart({ data, checkout }) {
   const dispatch = useDispatch();
 
   function handleDeleteProduct(product) {
@@ -15,13 +15,14 @@ function ProductCart({ data }) {
   }
 
   return (
-    <li className={cx('cart-item')} key={data.id}>
+    <li className={cx('cart-item', checkout && 'cart-item__checkout')} key={data.id}>
       <div className={cx('cart-item__image')}>
         <img src={data.image} alt="" />
       </div>
       <div className={cx('cart-item__info')}>
         <div className={cx('cart-item__name')}>
           <b>{data.name}</b>
+
           <div className={cx('cart-item__delete')} onClick={() => handleDeleteProduct(data)}>
             <box-icon name="x" size="md"></box-icon>
           </div>

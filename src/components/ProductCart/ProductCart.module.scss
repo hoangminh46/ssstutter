@@ -19,7 +19,7 @@
     justify-content: space-between;
   }
   .cart-item-price {
-    font-size: 16px;
+    font-size: 1.6rem;
     display: flex;
     gap: 15px;
     margin-bottom: 10px;
@@ -45,4 +45,17 @@
 }
 .cart-item__heading {
   width: 60px;
+}
+
+.cart-item__checkout {
+  .cart-item__image {
+    width: 180px;
+    height: auto;
+    img {
+      width: 100%;
+    }
+  }
+  .cart-item__delete {
+    display: none;
+  }
 }
