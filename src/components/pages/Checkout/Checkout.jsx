@@ -4,12 +4,13 @@ import images from 'assets/images';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductCart from 'components/ProductCart/ProductCart';
 import { NumericFormat } from 'react-number-format';
-import Button from 'components/Button/Button';
 import { useEffect, useState } from 'react';
 import { fetchCity } from 'redux/configSlice';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const cx = classNames.bind(styles);
 
@@ -39,11 +40,14 @@ function Checkout() {
   });
 
   const onSubmitForm1 = (data) => {
-    console.log('Form 1 data:', data);
+    if (Object.keys(errors).length === 0) {
+      console.log(data);
+      toast.success('Đặt hàng thành công!');
+    }
   };
 
   const onSubmitForm2 = (data) => {
-    console.log('Form 2 data:', data);
+    console.log(data);
   };
 
   const handleValidateAll = () => {
@@ -88,6 +92,7 @@ function Checkout() {
 
   return (
     <div className={cx('checkout')}>
+      <ToastContainer />
       <div className={cx('checkout-item')}>
         <div className={cx('checkout-title')}>THÔNG TIN GIAO HÀNG</div>
         <form action="" className={cx('checkout-form')} onSubmit={handleSubmit(onSubmitForm1)}>
