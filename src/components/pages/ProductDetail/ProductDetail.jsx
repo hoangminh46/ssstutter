@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { addProductCart, updateTotalPriceCart } from 'redux/cartSlice';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const cx = classNames.bind(styles);
 
@@ -29,10 +31,22 @@ function ProductDetail() {
       addProductCart({ ...product, countProduct: quantityInput, totalPrice: quantityInput * product.salePrice }),
     );
     dispatch(updateTotalPriceCart());
+    toast.success(`Đã thêm ${product.name} x${quantityInput}`, {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+      transition: Bounce,
+    });
   }
 
   return (
     <div className={cx('wrapper')}>
+      <ToastContainer />
       {product && (
         <div className={cx('product-detail')}>
           <div className={cx('product-image')}>
