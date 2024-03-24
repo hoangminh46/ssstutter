@@ -17,7 +17,10 @@ const cx = classNames.bind(styles);
 const schema = yup.object().shape({
   name: yup.string().required('Vui lòng điền tên của bạn'),
   email: yup.string().email('Email không hợp lệ').required('Vui lòng điền Email của bạn'),
-  phone: yup.string().matches(/^\d+$/, 'Số điện thoại không hợp lệ').required('Vui lòng điền số điện thoại'),
+  phone: yup
+    .string()
+    .matches(/(84|0[3|5|7|8|9])+([0-9]{8})\b/g, 'Số điện thoại không hợp lệ')
+    .required('Vui lòng điền số điện thoại'),
   city: yup.string().notOneOf(['default'], 'Bạn chưa chọn thành phố').required('Bạn chưa chọn thành phố'),
   district: yup.string().notOneOf(['default'], 'Bạn chưa chọn quận huyện').required('Bạn chưa chọn quận huyện'),
   ward: yup.string().notOneOf(['default'], 'Bạn chưa chọn phường xã').required('Bạn chưa chọn phường xã'),
