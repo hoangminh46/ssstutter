@@ -23,15 +23,21 @@ const images = {
   SliderImage2: require('./SliderImage2.jpeg'),
   SliderImage3: require('./SliderImage3.jpeg'),
   SliderImage4: require('./SliderImage4.jpeg'),
+  SliderImage5: require('./SliderImage5.jpeg'),
   ForHim: require('./ForHim.jpeg'),
   ForHer: require('./ForHer.jpeg'),
   WinterBanner: require('./winter2022.jpeg'),
   StoreBanner: require('./store.jpg'),
   PromotionImage1: require('./promotion-slide-1.webp'),
   PromotionImage2: require('./promotion-slide-2.webp'),
+  PromotionImage3: require('./promotion-slide-3.webp'),
   PaymentImage1: require('./Visa.png'),
   PaymentImage2: require('./MoMo.png'),
   PaymentImage3: require('./cod.png'),
+  BlogImage1: require('./blog-slider1.webp'),
+  BlogImage2: require('./blog-slider2.webp'),
+  BlogImage3: require('./blog-slider3.webp'),
+  BlogImage4: require('./blog-slider4.webp'),
 };
 
 export default images;

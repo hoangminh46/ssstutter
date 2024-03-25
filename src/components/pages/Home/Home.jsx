@@ -1,11 +1,10 @@
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
-import { ImageSlider, ProductsSlider, PromotionSlider } from 'components/Layout/Slider/Slider';
+import { BlogSlider, ImageSlider, ProductsSlider, PromotionSlider } from 'components/Layout/Slider/Slider';
 import 'boxicons';
 import images from 'assets/images';
 import { useSelector } from 'react-redux';
 import ProductItems from 'components/ProductItem/ProductItem';
-import Button from 'components/Button/Button';
 
 const cx = classNames.bind(styles);
 
@@ -35,7 +34,7 @@ function Home() {
             <ProductItems data={item} key={item.id} />
           ))}
         </div>
-        <Button text="XEM THÊM" size="lg" className={cx('load-more')} />
+        {/* <Button text="XEM THÊM" size="lg" className={cx('load-more')} /> */}
       </div>
       <PromotionSlider />
       <div className={cx('policy')}>
@@ -76,15 +75,12 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className={cx('store-banner')}>
-        <img src={images.StoreBanner} alt="" />
-        <div className={cx('banner-content')}>
-          <div className={cx('banner-heading')}>ssstutter</div>
-          <div className={cx('banner-desc')}>
-            Với thông điệp "Refined Life", SSStutter mong muốn đem đến cho khách hàng một lối sống tinh gọn bằng các sản
-            phẩm thời trang tinh tế.
-          </div>
+      <div className={cx('blog')}>
+        <div className={cx('heading')}>
+          <p>TIN TỨC MỚI</p>
+          <div className={cx('line')}></div>
         </div>
+        <BlogSlider />
       </div>
     </div>
   );

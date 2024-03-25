@@ -59,10 +59,13 @@ function ImageSlider() {
         <img src={images.SliderImage2} alt="" />
       </div>
       <div className={cx('slider-content')}>
-        <img src={images.SliderImage3} alt="" />
+        <img src={images.SliderImage5} alt="" />
       </div>
       <div className={cx('slider-content')}>
         <img src={images.SliderImage4} alt="" />
+      </div>
+      <div className={cx('slider-content')}>
+        <img src={images.SliderImage3} alt="" />
       </div>
     </Slider>
   );
@@ -134,8 +137,43 @@ function PromotionSlider() {
       <div className={cx('slider-content')}>
         <img src={images.PromotionImage2} alt="" className={cx('promition-image')} />
       </div>
+      <div className={cx('slider-content')}>
+        <img src={images.PromotionImage3} alt="" className={cx('promition-image')} />
+      </div>
     </Slider>
   );
 }
 
-export { TextSlider, ImageSlider, ProductsSlider, PromotionSlider };
+function BlogSlider() {
+  var settings = {
+    dots: false,
+    infinite: true,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+  };
+  return (
+    <Slider {...settings} className={cx('blog-slider')}>
+      <div className={cx('blog-content')}>
+        <img src={images.BlogImage1} alt="" />
+        <div className={cx('blog-desc')}>6 BÍ QUYẾT PHỐI MÀU GIÚP OUTFIT NỔI BẬT HƠN</div>
+      </div>
+      <div className={cx('blog-content')}>
+        <img src={images.BlogImage2} alt="" />
+        <div className={cx('blog-desc')}>BLAZER VÀ NHỮNG CÂU CHUYỆN THÚ VỊ</div>
+      </div>
+      <div className={cx('blog-content')}>
+        <img src={images.BlogImage3} alt="" />
+        <div className={cx('blog-desc')}>LỊCH SỬ NHỮNG CHIẾC QUẦN JEANS</div>
+      </div>
+      <div className={cx('blog-content')}>
+        <img src={images.BlogImage4} alt="" />
+        <div className={cx('blog-desc')}>SWEATSHIRT SWEATSHIRT</div>
+      </div>
+    </Slider>
+  );
+}
+
+export { TextSlider, ImageSlider, ProductsSlider, PromotionSlider, BlogSlider };
